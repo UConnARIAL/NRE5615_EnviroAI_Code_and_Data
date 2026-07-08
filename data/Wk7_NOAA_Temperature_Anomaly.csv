@@ -1,3 +1,6 @@
+# Title: Global Land and Ocean 12-Month Period Average Temperature Departures	
+# Units: Degrees Celsius	
+# Base Period: 1901-2000	
 year,temperature_anomaly_c
 1895,-0.23
 1896,-0.13

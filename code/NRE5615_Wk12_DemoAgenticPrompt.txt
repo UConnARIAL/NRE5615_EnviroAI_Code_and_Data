@@ -1,0 +1,74 @@
+We are doing an agentic AI simulation for environmental hazard decision support.
+
+scenario_description = (
+    "A county emergency management team is preparing for possible river flooding "
+    "after several days of heavy rainfall. The county includes river-adjacent "
+    "neighborhoods, rural roads, several schools, one hospital, and communities "
+    "with different levels of vulnerability and response capacity.")
+
+hazard = "River flooding after several days of heavy rainfall"
+
+Do not make real emergency decisions. This is a classroom simulation.
+
+You will act as an Orchestrator Agent. I will give you several agent cards one at a time. After each card, summarize it in 2–3 bullet points and wait for the next card. Do not create the final decision-support summary until I say: FINAL ORCHESTRATOR SUMMARY.
+
+agent_cards = [
+    {
+        "Agent name": "Hazard Agent",
+        "Purpose": "Identify the main hazard concern.",
+        "Data layer used": "Flood history, rainfall forecast, river floodplain maps, stream gauge trends.",
+        "Question answered": "Where is flooding most likely or most concerning?",
+        "Finding": "The main hazard concern is river flooding in low-lying areas near major streams. Heavy rainfall may increase river levels and create localized flooding in floodplain areas.",
+        "Possible limitation": "The finding is based on general flood-prone areas and does not include the latest verified river-stage measurements.",
+        "Human review needed": "Emergency managers should check current stream gauge data and local flood reports."
+    },
+
+    {
+        "Agent name": "Exposure Agent",
+        "Purpose": "Identify what people, infrastructure, and assets may be in harm's way.",
+        "Data layer used": "Buildings, roads, schools, hospital location, utilities, population distribution.",
+        "Question answered": "What could be affected if flooding occurs?",
+        "Finding": "Several residential areas, local roads, two schools, and one hospital access route are near areas that may be affected by flooding.",
+        "Possible limitation": "The finding does not confirm whether buildings or roads are currently flooded.",
+        "Human review needed": "Local officials should verify current road and facility status."
+    },
+
+    {
+        "Agent name": "Vulnerability Agent",
+        "Purpose": "Identify communities or systems that may be more sensitive to harm.",
+        "Data layer used": "Older adult population, vehicle access, income, housing condition, disability, language access.",
+        "Question answered": "Which communities may need extra support?",
+        "Finding": "Some neighborhoods near the river have higher shares of older residents and households with limited vehicle access. These areas may need additional communication or evacuation support.",
+        "Possible limitation": "Vulnerability data may be outdated or may not capture local informal support networks.",
+        "Human review needed": "Community partners should confirm whether the priority areas match local knowledge."
+    },
+
+    {
+        "Agent name": "Resilience and Capacity Agent",
+        "Purpose": "Identify available response and recovery resources.",
+        "Data layer used": "Shelter locations, emergency services, road network, evacuation routes, hospital access, communication systems.",
+        "Question answered": "What resources are available, and where are response gaps possible?",
+        "Finding": "The county has shelters and emergency services available, but some evacuation routes may overlap with flood-prone roads. Backup routes and shelter accessibility should be checked.",
+        "Possible limitation": "The finding does not include current shelter capacity or real-time road closure information.",
+        "Human review needed": "Emergency managers should confirm shelter status, road closures, and resource availability."
+    },
+
+    {
+        "Agent name": "Situational Awareness Agent",
+        "Purpose": "Identify current observations that should be checked before decisions are made.",
+        "Data layer used": "Weather alerts, stream gauges, traffic reports, emergency calls, field reports, social media, drone or satellite imagery.",
+        "Question answered": "What current information is needed now?",
+        "Finding": "Current rainfall totals, stream gauge readings, road closure reports, and field observations should be checked before making final decisions.",
+        "Possible limitation": "Crowdsourced reports may be incomplete, duplicated, or inaccurate.",
+        "Human review needed": "Field staff should confirm conditions before public decisions are made."
+    }
+]
+
+Create a decision-support summary with the following sections:
+1. Overall situation summary
+2. Priority concerns
+3. Why these concerns matter
+4. Recommended next data checks
+5. Human review needed before action
+6. Main limitations of the AI-assisted summary
+7. One sentence explaining how this agentic AI workflow is different from a single forecasting model
